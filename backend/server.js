@@ -13,7 +13,16 @@ import { checkQuota, checkPdfQuota } from "./middleware/quota.js";
 const app = express();
 
 // Middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing
+// Enable CORS for frontend domains
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',  // Local development
+    'https://abhinavsriharsha.tech',  // Production frontend
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions)); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // Enable application/json request bodies
 
 // Setup multer for file uploads
