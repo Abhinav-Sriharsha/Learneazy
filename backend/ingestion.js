@@ -10,7 +10,8 @@ import {
 import { vectorStore } from "./vectorStore.js";
 import { sleep } from "./utils.js";
 
-const PYTHON_SERVICE_URL = "http://localhost:5000/process_pdf";
+// Use environment variable for Python service URL (Railway internal URL in production)
+const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || "http://localhost:5000/process_pdf";
 
 /**
  * Calls the Python service to process the PDF and get structured data.
