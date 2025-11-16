@@ -14,7 +14,7 @@ COPY config.js .
 COPY ingestion.js .
 COPY ragChain.js .
 COPY utils.js .
-COPY vectoreStore.js .
+COPY vectorStore.js .
 COPY middleware ./middleware
 
 # Expose port
