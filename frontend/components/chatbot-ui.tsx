@@ -29,7 +29,19 @@ interface FlashcardSet {
 
 // --- REMOVED markdownStyles and applySketchyFont ---
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+// Get backend URL from environment variable at runtime
+const getBackendUrl = () => {
+  if (typeof window !== 'undefined') {
+    // Client-side: check if we're on localhost or deployed
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isLocalhost && !process.env.NEXT_PUBLIC_BACKEND_URL) {
+      console.warn('NEXT_PUBLIC_BACKEND_URL not set in production!');
+    }
+  }
+  return process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+};
+
+const BACKEND_URL = getBackendUrl();
 
 export default function ChatbotUI() {
   // Auth context
