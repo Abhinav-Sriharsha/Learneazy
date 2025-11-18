@@ -13,6 +13,10 @@ import { sleep } from "./utils.js";
 // Use environment variable for Python service URL (Railway internal URL in production)
 const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || "http://localhost:5000/process_pdf";
 
+// Debug logging
+console.log(`🔧 Python Service URL configured: ${PYTHON_SERVICE_URL}`);
+console.log(`🔧 Environment PYTHON_SERVICE_URL: ${process.env.PYTHON_SERVICE_URL || 'NOT SET'}`);
+
 /**
  * Calls the Python service to process the PDF and get structured data.
  */
