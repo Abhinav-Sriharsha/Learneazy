@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { BookOpen, Sparkles, Zap, Shield, ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Sparkles, Zap, ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
 
@@ -28,7 +29,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <BookOpen className="h-8 w-8 text-blue-600" />
+            <Image src="/L-logo.png" alt="Learneazy" width={40} height={40} className="h-8 w-8" />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Learneazy.io
             </span>
@@ -175,7 +176,7 @@ export default function LandingPage() {
             {/* Feature 2 */}
             <div className="group p-8 rounded-2xl border border-gray-200 hover:border-purple-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                <BookOpen className="h-7 w-7 text-white" />
+                <Sparkles className="h-7 w-7 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Generate Flashcards</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -349,7 +350,7 @@ export default function LandingPage() {
       <footer className="py-12 px-6 bg-gray-900 text-gray-400">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <BookOpen className="h-6 w-6 text-blue-500" />
+            <Image src="/L-logo.png" alt="Learneazy" width={24} height={24} className="h-6 w-6" />
             <span className="text-xl font-bold text-white">Learneazy.io</span>
           </div>
           <p className="mb-4">AI-powered learning assistant for students</p>
